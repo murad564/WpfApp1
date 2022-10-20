@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -22,18 +22,33 @@ namespace WpfApp1
     public partial class MainWindow : Window
     {
         private List<SolidColorBrush> brushes;
-        private Random random;
+        private Random rnd;
         public MainWindow()
         {
             InitializeComponent();
-            random = new Random();
-
+            rnd = new Random();
+            brushes = new List<SolidColorBrush> 
+              {
+                Brushes.Orange,
+                Brushes.Sienna,
+                Brushes.Salmon,
+                Brushes.AliceBlue,
+                Brushes.AntiqueWhite,
+                Brushes.Aqua,
+                Brushes.Aquamarine,
+                Brushes.Gold,
+                Brushes.GreenYellow,
+                Brushes.LightGoldenrodYellow,
+                Brushes.Olive,
+                Brushes.Gainsboro,
+                Brushes.DeepPink,
+            };
         }
 
         private void btn_7_Click(object sender, RoutedEventArgs e)
         {
-            if(sender is Button btn)
-            s.Background = brushes[random.Next(0, brushes.Count)];
+            if(sender is Button)
+            s.Background = brushes[rnd.Next(0, brushes.Count)];
         }
 
         private void btn_1_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
@@ -42,7 +57,5 @@ namespace WpfApp1
             first_cont.Children.Remove(s);
             Title = s.Content.ToString();
         }
-
-   
     }
 }
