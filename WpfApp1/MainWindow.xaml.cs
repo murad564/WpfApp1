@@ -22,11 +22,11 @@ namespace WpfApp1
     public partial class MainWindow : Window
     {
         private List<SolidColorBrush> brushes;
-        private Random rnd;
+        private Random random;
         public MainWindow()
         {
             InitializeComponent();
-            rnd = new Random();
+            random = new Random();
             brushes = new List<SolidColorBrush> 
               {
                 Brushes.Orange,
@@ -35,25 +35,19 @@ namespace WpfApp1
                 Brushes.AliceBlue,
                 Brushes.AntiqueWhite,
                 Brushes.Aqua,
-                Brushes.Aquamarine,
-                Brushes.Gold,
-                Brushes.GreenYellow,
-                Brushes.LightGoldenrodYellow,
-                Brushes.Olive,
-                Brushes.Gainsboro,
-                Brushes.DeepPink,
+     
             };
         }
 
         private void btn_7_Click(object sender, RoutedEventArgs e)
         {
             if(sender is Button)
-            s.Background = brushes[rnd.Next(0, brushes.Count)];
+            s.Background = brushes[random.Next(0, brushes.Count)];
         }
 
         private void btn_1_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            var s = sender as Button;
+             if(sender is Button)
             first_cont.Children.Remove(s);
             Title = s.Content.ToString();
         }
