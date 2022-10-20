@@ -27,27 +27,12 @@ namespace WpfApp1
         {
             InitializeComponent();
             random = new Random();
-            brushes = new List<SolidColorBrush>
-              {
-                Brushes.Orange,
-                Brushes.Sienna,
-                Brushes.Salmon,
-                Brushes.AliceBlue,
-                Brushes.AntiqueWhite,
-                Brushes.Aqua,
-                Brushes.Aquamarine,
-                Brushes.Gold,
-                Brushes.GreenYellow,
-                Brushes.LightGoldenrodYellow,
-                Brushes.Olive,
-                Brushes.Gainsboro,
-                Brushes.DeepPink,
-            };
+
         }
 
         private void btn_7_Click(object sender, RoutedEventArgs e)
         {
-            var s = sender as Button;
+            if(sender is Button btn)
             s.Background = brushes[random.Next(0, brushes.Count)];
         }
 
